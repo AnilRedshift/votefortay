@@ -36,7 +36,7 @@ class LyricJob(Job):
         channels = slack_client.api_call('channels.list')['channels']
         channel_id = None
         for channel in channels:
-            if channel['name'] == 'aoeu':
+            if channel['name'] == 'emoji':
                 channel_id = channel['id']
                 break
 
@@ -50,7 +50,7 @@ class VideoJob(Job):
             channels = slack_client.api_call('channels.list')['channels']
             channel_id = None
             for channel in channels:
-                if channel['name'] == 'aoeu':
+                if channel['name'] == 'random':
                     channel_id = channel['id']
                     break
 
