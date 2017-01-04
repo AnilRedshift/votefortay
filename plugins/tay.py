@@ -5,6 +5,7 @@ header = '<@{}> '.format(bot_id)
 
 responses = {
     'hi': 'Nice to meet you, where you been?',
+    'who should i vote for?': 'Me, of course',
 }
 
 class Tay(Plugin):
@@ -18,3 +19,4 @@ class Tay(Plugin):
                 response = responses[message]
                 print('chicken dinner {}'.format(response))
                 self.outputs.append([data['channel'], response])
+                self.outputs.append([data['channel'], ":tay::tay::tay:Don't forget to #votefortay :tay::tay::tay:"])
