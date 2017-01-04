@@ -1,0 +1,10 @@
+#!/bin/bash
+
+project=${PWD##*/}
+if [ -f $AUTOENV_ENV_FILENAME ];
+then
+    if which virtualenvwrapper.sh >/dev/null; then
+            test -d $WORKON_HOME/$project || mkvirtualenv $project
+            workon $project
+    fi
+fi
