@@ -9,5 +9,5 @@ def send(message, channel):
 if __name__ == '__main__':
     channel = '#emoji'
     if len(sys.argv) >= 3:
-        channel = sys.argv[2]
+        channel = '#' + sys.argv[2]
     send(sys.argv[1], channel)
