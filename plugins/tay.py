@@ -1,4 +1,5 @@
 from rtmbot.core import Plugin
+import os
 
 bot_id = 'U3MSN806S'
 header = '<@{}> '.format(bot_id)
@@ -7,6 +8,20 @@ responses = {
     'hi': 'Nice to meet you, where you been?',
     'who should i vote for?': 'Me, of course',
 }
+
+directory = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+lyrics = []
+with open(os.path.join(directory, 'lyrics.txt')) as fp:
+    cur = ''
+    for line in fp:
+        if line.strip():
+            cur += line
+        else:
+            lyrics.append(cur.strip())
+            cur = ''
+
 
 class Tay(Plugin):
 
