@@ -77,7 +77,7 @@ class Tay(Plugin):
     def process_message(self, data):
         if data['text'].startswith(header):
             message = data['text'][len(header):].strip().lower()
-            if responses[message]:
+            if message in responses:
                 response = responses[message]
                 self.outputs.append([data['channel'], response])
                 self.outputs.append([data['channel'], ":tay::tay::tay:Don't forget to #votefortay :tay::tay::tay:"])
